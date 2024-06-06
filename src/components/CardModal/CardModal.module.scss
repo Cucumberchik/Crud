@@ -1,0 +1,85 @@
+#modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+
+  .contant {
+    margin: 0 auto;
+    width: 490px;
+    height: 400px;
+    background-color: var(--black300);
+    border-radius: 8px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+    h2 {
+      font: 500 30px / 150% var(--font-family);
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    input,
+    textarea {
+      padding: 6.5px 10px;
+      width: 90%;
+      border: 1px solid var(--black500);
+      border-radius: 4px;
+      background: transparent;
+      font: 400 15px / 100% var(--font-family);
+    }
+
+    .modal_buttons {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+
+      button {
+        width: 150px;
+        border-radius: 4px;
+        padding: 8px 15px;
+        font: 450 clamp(10px, 2vw, 15px) / 100% var(--font-family);
+      }
+      .consel {
+        border: 1px solid var(--black400);
+        background: transparent;
+
+        &:hover {
+          background: var(--black400);
+        }
+      }
+
+      .add {
+        border: 1px solid var(--blue700);
+        background: var(--blue600);
+
+        &:hover {
+          background: var(--blue700);
+        }
+      }
+    }
+  }
+}
+
+.modal_disible {
+  visibility: hidden;
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.modal_active {
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1);
+}

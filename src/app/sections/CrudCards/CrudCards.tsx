@@ -1,14 +1,13 @@
 import { NextPage } from "next";
 import { ReactNode } from "react";
 import style from "./CrudCards.module.scss";
-import Card from "@/components/Card/Card";
+import Card from "@/components/Card";
 
-const CrudCards: NextPage = (): ReactNode => {
-  const data: CardType[] = [
-    { title: "First Crud", desc: "hello hello hello", _id: 3 },
-  ];
-  
-
+const CrudCards: NextPage<{
+  data: CardType[];
+  handleDelete: (_id: number) => void;
+  handleOpenModalChangeCard: (_id: number) => void;
+}> = ({ data, handleDelete, handleOpenModalChangeCard }): ReactNode => {
   return (
     <section className={style.crud_cards}>
       <div className="container">
@@ -18,6 +17,8 @@ const CrudCards: NextPage = (): ReactNode => {
               key={idx}
               style={style}
               data={el}
+              handleDelete={handleDelete}
+              handleOpenModalChangeCard={handleOpenModalChangeCard}
             />
           ))}
         </div>
